@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestAlfaEduard"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="Распаковка файлов" Height="600" Width="800">
+    <Window.Background>
+        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionColorKey}}"/>
+    </Window.Background>
+    <Grid VerticalAlignment="Center" Margin="20,20,20,20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="800*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Border MinWidth="300" Margin="15,0,4,0" Background="#FFDFE2E2" VerticalAlignment="Center" Padding="40" Height="322">
+            <StackPanel>
+                <TextBlock Text="Считать данные из файлов" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Margin="0 0 0 20"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="279*"/>
+                        <ColumnDefinition Width="377*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button HorizontalAlignment="Left" Content="Модель данных" FontSize="20" Margin="48,2,0,19" Click="XMLDataBase"  BorderThickness="4,4,4,4"/>
+                    <Button HorizontalAlignment="Right" Content="Регулярные выражения" FontSize="20" Margin="0,0,10,20" Click="XMLRegular"  BorderThickness="4,4,4,4" Grid.Column="1"/>
+                </Grid>
+                <TextBlock Text="Записать данные в" HorizontalAlignment="Center"  FontSize="20" FontWeight="Bold" Margin="0 20 0 20"/>
+                <Grid>
+                    <Button HorizontalAlignment="Left" FontSize="20" Content="Exel" Click="AddExel" Width="73" Margin="0,0,0,-28" BorderThickness="4,4,4,4"/>
+                    <Button HorizontalAlignment="Center" FontSize="20" Content="Word" Click="AddWord" Width="110" Margin="0,0,0,-28" OpacityMask="#FFC72020" BorderThickness="4,4,4,4"/>
+                    <Button HorizontalAlignment="Right" FontSize="20" Content="Json" Margin="0,0,-1,-30" Click="AddJson" Width="62" RenderTransformOrigin="0.5,0.5"  BorderThickness="4,4,4,4">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="-1.757"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="-0.469"/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
